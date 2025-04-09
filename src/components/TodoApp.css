@@ -1,0 +1,48 @@
+
+.out-box,.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box{
+    width: 500px;
+    height: 500px;
+    /* background-color: blue; */
+    backdrop-filter: blur(10);
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    overflow:auto;
+    box-shadow: 5px 5px 5px black;
+}
+button{
+    width: 100px;
+    background-color: rgba(10,10,255,0.5);
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-weight: 900;
+}
+.inputButton{
+    position:sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+}
+input{
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+ul li{
+    display: flex;
+    justify-content: space-between;
+    overflow: auto;
+}
+ul{
+    width: 100%;
+    
+}
