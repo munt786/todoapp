@@ -31,6 +31,11 @@ export default function TodoApp2() {
       )
     );
   };
+  const deleteByid=(id)=>{
+    const updatedTasks=tasks.filter((task)=>task.id!==id);
+    setTasks(updatedTasks);
+    localStorage.setItem('todo',JSON.stringify(updatedTasks))
+  }
   return (
     <div className="out-box">
       <div className="box">
@@ -52,9 +57,12 @@ export default function TodoApp2() {
             {tasks.map((task)=>(
                 <span key={task.id} className="listItem">
                     {task.text}
-                    <button onClick={()=>toggleComplete(task.id)}>
+                    <span>
+                      <button onClick={()=>toggleComplete(task.id)}>
                         {task.completed ? <FaCheck/>:"Complete"}
-                    </button>
+                      </button>
+                      <button onClick={()=>deleteByid(task.id)}>Delete</button>
+                    </span>
                 </span>
             ))}
         </div>
