@@ -25,11 +25,11 @@ export default function TodoApp2() {
     }
   };
   const toggleComplete = (id) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
+    const updatedTasks=tasks.map((task)=>
+      task.id===id?{...task, completed: !task.completed}:task
+    )
+    setTasks(updatedTasks);
+    localStorage.setItem('todo',JSON.stringify(updatedTasks));
   };
   const deleteByid=(id)=>{
     const updatedTasks=tasks.filter((task)=>task.id!==id);
